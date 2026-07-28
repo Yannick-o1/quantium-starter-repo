@@ -39,7 +39,8 @@ python app.py
 
 Open <http://127.0.0.1:8050> to view the daily Pink Morsel sales line chart.
 The chart combines all four regions, sorts the totals by date and marks the
-price increase on 15 January 2021.
+price increase on 15 January 2021. Use the region control to switch between
+north, east, south, west and the combined all-region view.
 
 Run all automated checks with:
 

@@ -1,0 +1,348 @@
+:root {
+    --ink: #31263a;
+    --muted: #6d6370;
+    --plum: #4b284c;
+    --plum-deep: #351d37;
+    --pink: #c7496f;
+    --pink-soft: #fae7ed;
+    --cream: #fff9f4;
+    --paper: #ffffff;
+    --gold: #d9a441;
+    --line: #e9e1e7;
+    --shadow: 0 20px 55px rgba(65, 36, 63, 0.11);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: var(--cream);
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    background: var(--cream);
+    color: var(--ink);
+    font-family:
+        Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+}
+
+.app-shell {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.app-shell::before,
+.app-shell::after {
+    position: fixed;
+    z-index: 0;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    content: "";
+    pointer-events: none;
+}
+
+.app-shell::before {
+    top: -120px;
+    right: -90px;
+    background: #f7d6e0;
+}
+
+.app-shell::after {
+    bottom: -160px;
+    left: -130px;
+    background: #f1dfbd;
+}
+
+.dashboard {
+    position: relative;
+    z-index: 1;
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 32px 0 24px;
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(30px, 6vw, 62px);
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    border-radius: 30px;
+    background: var(--plum-deep);
+    box-shadow: var(--shadow);
+    color: #fffafc;
+}
+
+.hero::after {
+    position: absolute;
+    top: -72px;
+    right: -54px;
+    width: 220px;
+    height: 220px;
+    border: 42px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    content: "";
+}
+
+.brand-row {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.eyebrow,
+.section-kicker {
+    margin: 0;
+    color: var(--pink);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+}
+
+.hero .eyebrow {
+    color: #f4b7c8;
+}
+
+.brand-badge {
+    padding: 5px 9px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 999px;
+    color: #f6e9f1;
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.hero h1 {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+    margin: 0;
+    font-size: clamp(2.25rem, 6vw, 4.7rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+}
+
+.hero-copy {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    margin: 24px 0 0;
+    color: #e2d6e1;
+    font-size: clamp(1rem, 2vw, 1.16rem);
+    line-height: 1.65;
+}
+
+.control-panel {
+    display: grid;
+    grid-template-columns: minmax(190px, 0.7fr) minmax(0, 1.8fr);
+    align-items: center;
+    gap: 32px;
+    margin: 22px 0;
+    padding: 24px 28px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: var(--paper);
+    box-shadow: 0 10px 32px rgba(65, 36, 63, 0.07);
+}
+
+.control-title {
+    margin: 5px 0 0;
+    font-size: 1.2rem;
+    letter-spacing: -0.02em;
+}
+
+.region-options {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.region-options > label {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 13px;
+    background: #fffdfc;
+    color: var(--muted) !important;
+    font-size: 0.9rem;
+    font-weight: 750;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition:
+        transform 160ms ease,
+        border-color 160ms ease,
+        background-color 160ms ease,
+        color 160ms ease;
+}
+
+.region-options > label:hover {
+    transform: translateY(-2px);
+    border-color: #d7a7b6;
+    color: var(--pink) !important;
+}
+
+.region-options > label.selected {
+    border-color: var(--pink);
+    background: var(--pink);
+    box-shadow: 0 8px 20px rgba(199, 73, 111, 0.24);
+    color: white !important;
+}
+
+.region-label {
+    color: inherit;
+    font: inherit;
+}
+
+.region-radio {
+    width: 15px;
+    height: 15px;
+    margin: 0 7px 0 0;
+    accent-color: var(--plum);
+}
+
+.region-radio:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
+
+.insight-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 22px;
+    padding: 22px 26px;
+    border: 1px solid #edd8df;
+    border-radius: 22px;
+    background: var(--pink-soft);
+}
+
+.insight-icon {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border-radius: 15px;
+    background: var(--pink);
+    color: white;
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+
+.insight-card strong {
+    display: block;
+    margin: 5px 0 4px;
+    color: var(--ink);
+    font-size: clamp(1.03rem, 2vw, 1.2rem);
+    line-height: 1.4;
+}
+
+.insight-card span {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.chart-card {
+    padding: 18px 18px 10px;
+    border: 1px solid var(--line);
+    border-radius: 26px;
+    background: var(--paper);
+    box-shadow: var(--shadow);
+}
+
+.chart-loading {
+    min-height: 510px;
+}
+
+.sales-chart {
+    height: min(68vh, 680px);
+    min-height: 510px;
+}
+
+.source-note {
+    margin: 0;
+    padding: 2px 18px 12px;
+    color: #817783;
+    font-size: 0.78rem;
+}
+
+.footer {
+    padding: 24px 4px 0;
+    color: #8c818b;
+    font-size: 0.78rem;
+    text-align: center;
+}
+
+@media (max-width: 720px) {
+    .dashboard {
+        width: min(100% - 24px, 1180px);
+        padding-top: 12px;
+    }
+
+    .hero {
+        padding: 30px 24px 34px;
+        border-radius: 22px;
+    }
+
+    .hero::after {
+        top: -90px;
+        right: -90px;
+    }
+
+    .control-panel {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 22px 18px;
+    }
+
+    .region-options {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .region-options > label:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .insight-card {
+        align-items: start;
+        padding: 20px 18px;
+    }
+
+    .insight-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .chart-card {
+        padding: 8px 2px 10px;
+        border-radius: 20px;
+    }
+
+    .sales-chart,
+    .chart-loading {
+        min-height: 540px;
+    }
+
+    .source-note {
+        padding: 0 18px 12px;
+        line-height: 1.5;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .region-options > label {
+        transition: none;
+    }
+}
