@@ -1,2 +1,3 @@
 dash[testing]
 pandas
+urllib3<2

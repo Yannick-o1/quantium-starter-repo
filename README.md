@@ -42,8 +42,8 @@ The chart combines all four regions, sorts the totals by date and marks the
 price increase on 15 January 2021. Use the region control to switch between
 north, east, south, west and the combined all-region view.
 
-Run all automated checks with:
+Run the full Pytest suite, including the three browser-based Dash checks, with:
 
 ```bash
-python -m unittest
+python -m pytest
 ```
