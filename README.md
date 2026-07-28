@@ -47,3 +47,12 @@ Run the full Pytest suite, including the three browser-based Dash checks, with:
 ```bash
 python -m pytest
 ```
+
+For CI-style execution, use the project script:
+
+```bash
+./run_tests.sh
+```
+
+The script activates `.venv`, executes the complete Pytest suite and exits
+with status `0` on success or `1` on failure.
