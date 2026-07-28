@@ -1,6 +1,7 @@
 """Create the formatted Pink Morsel sales dataset used by the Dash app."""
 
 from pathlib import Path
+from typing import Optional, Union
 
 import pandas as pd
 
@@ -11,8 +12,8 @@ OUTPUT_FILENAME = "daily_sales_data.csv"
 
 
 def process_sales_data(
-    data_directory: str | Path = Path(__file__).resolve().parent / "data",
-    output_file: str | Path | None = None,
+    data_directory: Union[str, Path] = Path(__file__).resolve().parent / "data",
+    output_file: Optional[Union[str, Path]] = None,
 ) -> pd.DataFrame:
     """Combine the raw CSV files into sales, date and region columns."""
     data_directory = Path(data_directory)
